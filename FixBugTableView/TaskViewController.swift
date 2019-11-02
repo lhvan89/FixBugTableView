@@ -17,6 +17,9 @@ class TaskViewController: UIViewController {
         
         tableView.register(UINib(nibName: "DetailTaskTableViewCell", bundle: nil), forCellReuseIdentifier: "DetailTaskTableViewCell")
         tableView.register(UINib(nibName: "AttachedFilesTableViewCell", bundle: nil), forCellReuseIdentifier: "AttachedFilesTableViewCell")
+        
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 10
     }
 }
 
