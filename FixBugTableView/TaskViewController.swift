@@ -42,8 +42,16 @@ extension TaskViewController: UITableViewDataSource {
         
         if indexPath.section == 1 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachedFilesTableViewCell") as? AttachedFilesTableViewCell else { return UITableViewCell() }
-            cell.updateHeightContain()
+//            cell.updateHeightContain()
+            
+            cell.frame = tableView.bounds
             cell.layoutIfNeeded()
+            
+            cell.collectionView.reloadData()
+            
+            cell.collectionViewHeightConstraint.constant = cell.collectionView.collectionViewLayout.collectionViewContentSize.height
+            
+            
             return cell
         }
         return UITableViewCell()
